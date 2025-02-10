@@ -1,0 +1,7 @@
+.column-cb {
+  width: 16px;
+}
+
+#the-list tr td:first-child input {
+  margin-left: 8px;
+}
