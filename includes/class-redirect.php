@@ -3,11 +3,22 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+/**
+ * Class WP_Shortlink_Redirect
+ *
+ * Handles the redirection of shortlinks to their original URLs.
+ */
 class WP_Shortlink_Redirect {
     public function __construct() {
         add_action('init', [$this, 'handle_redirect']);
     }
 
+  /**
+	 * Handles the redirection of shortlinks.
+	 *
+	 * This method checks the request URI, retrieves the original URL from the database,
+	 * increments the click count, and performs a 301 redirect to the original URL.
+	 */
     public function handle_redirect() {
         global $wpdb;
         
